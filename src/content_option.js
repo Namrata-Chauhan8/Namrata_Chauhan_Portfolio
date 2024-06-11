@@ -132,7 +132,7 @@ const dataportfolio = [
   {
     img: weather,
     description: "Weather Application (React Js).",
-    link: "https://github.com/Namrata-Chauhan8/Weather-App",
+    link: "https://weather-app-eta-seven-42.vercel.app/",
   },
   {
     img: ecommerce,
