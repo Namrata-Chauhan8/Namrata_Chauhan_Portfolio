@@ -1,11 +1,6 @@
 import React from "react";
 import "./style.css";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaSkype,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 
 import { socialprofils } from "../../content_option";
@@ -30,7 +25,7 @@ export const Socialicons = (params) => {
         )}
         {socialprofils.email && (
           <li>
-            <a href={`mailto:${socialprofils.email}`}>
+            <a href={socialprofils.email}>
               <IoIosMail />
             </a>
           </li>
@@ -39,13 +34,6 @@ export const Socialicons = (params) => {
           <li>
             <a href={socialprofils.linkedin}>
               <FaLinkedin />
-            </a>
-          </li>
-        )}
-        {socialprofils.skype && (
-          <li>
-            <a href={socialprofils.skype}>
-              <FaSkype />
             </a>
           </li>
         )}

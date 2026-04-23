@@ -2,7 +2,11 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { dataportfolio, meta } from "../../content_option";
+import {
+  dataportfolio,
+  meta,
+  professionalProjects,
+} from "../../content_option";
 
 export const Portfolio = () => {
   return (
@@ -15,46 +19,83 @@ export const Portfolio = () => {
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4"> Projects </h1>{" "}
+            <h1 className="display-4 mb-4">Projects</h1>{" "}
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <div className="mb-5 po_items_ho">
-          {dataportfolio.map((data, i) => {
-            return (
-              <div key={i} className="po_item">
-                <img src={data.img} alt="" />
-                <div className="content">
-                  <p>{data.description}</p>
-                  <a href={data.link}>view project</a>
-                </div>
-              </div>
-            );
-          })}
-          <div>
-            <b>Others:</b><br></br>
-            <b>1. </b>Software development Intern at Zignuts Technolab,
-            Gandhinagar.<br></br>
-            <b>2. </b>1 month Internship in Android Technology at V2S
-            Technologies, Bhavnagar, Gujarat.<br></br>
-            <br></br>
-            <b>
-              3. <i>Other projects:</i>
-            </b>
-            <ol type="a">
-              <li>Game Listing App in NextJs (version 13 & 14)</li>
-              <li>E-Store (React Js) with billing system</li>
-              <li>
-                ReadEasy (React Js) is a website for purchasing books with
-                billing system
-              </li>
-              <li>
-                Aashayein (PHP) is a website for empowering senior citizens in
-                their daily life
-              </li>
-            </ol>
+
+        <section className="portfolio_section portfolio_section--professional">
+          <div className="portfolio_section_head">
+            <h2>Professional Projects</h2>
           </div>
-        </div>
+          <Row className="g-4">
+            {professionalProjects.map((project, i) => (
+              <Col key={i} lg={6} md={6} sm={12} className="d-flex">
+                <article className="pro_item w-100">
+                  <div className="pro_item_top">
+                    <div>
+                      <h3>{project.title}</h3>
+                    </div>
+                  </div>
+                  <p className="pro_item_desc">{project.description}</p>
+                  <div className="po_tags pro_tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </article>
+              </Col>
+            ))}
+          </Row>
+        </section>
+
+        <section className="portfolio_section portfolio_section--practice">
+          <div className="portfolio_section_head portfolio_section_head--secondary">
+            <h2>Personal Projects</h2>
+            <p>
+              Smaller personal builds that show experimentation and hands-on
+              learning.
+            </p>
+          </div>
+          <Row className="mb-5 po_items_ho g-4">
+            {dataportfolio.map((data, i) => {
+              return (
+                <Col key={i} lg={6} md={6} sm={12} className="d-flex">
+                  <article className="po_item w-100">
+                    <div className="po_item_media">
+                      <img src={data.img} alt={data.title} />
+                    </div>
+                    <div className="po_item_body">
+                      <div className="po_item_header">
+                        <h3>{data.title}</h3>
+                        <p>{data.description}</p>
+                      </div>
+                      <div className="po_tags">
+                        {data.tags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                      {data.isDownload ? (
+                        <a className="po_btn" href={data.downloadUrl} download>
+                          Download APK
+                        </a>
+                      ) : (
+                        <a
+                          className="po_btn"
+                          href={data.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View project
+                        </a>
+                      )}
+                    </div>
+                  </article>
+                </Col>
+              );
+            })}
+          </Row>
+        </section>
       </Container>
     </HelmetProvider>
   );

@@ -1,7 +1,10 @@
-import blog from "./assets/images/BlogNest_Home.png";
-import reminder from "./assets/images/Reminder.png";
-import weather from "./assets/images/WeatherApp.png";
-import ecommerce from "./assets/images/ecommerce.png";
+import burger from "./assets/images/burger.png";
+import chatapp from "./assets/images/chat.png";
+import timetrack from "./assets/images/timetrack.png";
+import weather from "./assets/images/weather.png";
+import avatar from "./assets/images/avatar.png";
+import avatarDark from "./assets/images/avatardark.png";
+
 const logotext = "Namrata Chauhan";
 const meta = {
   title: "Namrata Chauhan",
@@ -15,87 +18,112 @@ const introdata = {
     first: "I'm a Web Developer",
   },
   description:
-    "I specialize in leveraging the MERN stack, comprising MongoDB, Express.js, React.js, and Node.js, to craft elegant and user-centric solutions.",
-  your_img_url: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFwdG9wfGVufDB8fDB8fHww",
+    "I work with React.js, Next.js, Express.js, Node.js and MongoDB to build reliable, scalable web applications, with a focus on usability and maintainable code.",
 };
 
 const dataabout = {
   title: "a bit about my self",
-  aboutme:"Hello! I'm Namrata Chauhan, a dedicated and enthusiastic MERN stack developer. Currently, I'm leveraging my skills and gaining practical experience through an internship at Zignuts Technolab in Gandhinagar, Gujarat."
+  aboutme:
+    "I am a MERN stack developer with approximately 2 years of experience, currently working as a Junior Software Development Engineer (SDE). I specialize in building scalable and maintainable web applications using the MERN stack, Next.js, and React Native.",
 };
 const worktimeline = [
   {
-    jobtitle: "1 month Internship in Android Technology",
-    where: "V2S Technologies, Bhavnagar, Gujarat",
-    date: "20/07/2023 - 20/08/2023",
-  },
-  {
     jobtitle: "Software Development Intern",
     where: "Zignuts Technolab, Gandhinagar, Gujarat",
-    date: "01/02/2024 - Present",
+    date: "Feb 2024 - Aug 2024",
+  },
+  {
+    jobtitle: "Jr. Software Development Engineer",
+    where: "Zignuts Technolab, Gandhinagar, Gujarat",
+    date: "Aug 2024 - Present",
   },
 ];
 
-const skills = [
+const skillCategories = [
   {
-    name: "Java",
-    value: 80,
+    category: "FE Technology",
+    skills: [
+      {
+        name: "HTML5",
+        value: 100,
+      },
+      {
+        name: "CSS3",
+        value: 99,
+      },
+      {
+        name: "Javascript",
+        value: 90,
+      },
+      {
+        name: "React JS",
+        value: 95,
+      },
+      {
+        name: "Next Js",
+        value: 80,
+      },
+      {
+        name: "React Native",
+        value: 90,
+      },
+    ],
   },
   {
-    name: "PHP",
-    value: 80,
+    category: "Backend",
+    skills: [
+      {
+        name: "Node Js",
+        value: 85,
+      },
+      {
+        name: "Express Js",
+        value: 85,
+      },
+      {
+        name: "Java",
+        value: 60,
+      },
+    ],
   },
   {
-    name: "Javascript",
-    value: 90,
+    category: "Database",
+    skills: [
+      {
+        name: "Mongo DB",
+        value: 95,
+      },
+      {
+        name: "SQL",
+        value: 95,
+      },
+    ],
   },
   {
-    name: "React JS",
-    value: 95,
+    category: "UI Library",
+    skills: [
+      {
+        name: "Bootstrap",
+        value: 100,
+      },
+      {
+        name: "Tailwind Css",
+        value: 100,
+      },
+      {
+        name: "Material UI",
+        value: 100,
+      },
+    ],
   },
   {
-    name: "Node Js",
-    value: 85,
-  },
-  {
-    name: "Next Js",
-    value: 80,
-  },
-  {
-    name: "Mongo DB",
-    value: 95,
-  },
-  {
-    name: "SQL",
-    value: 95,
-  },
-  {
-    name: "Bootstrap",
-    value: 97,
-  },
-  {
-    name: "HTML5",
-    value: 100,
-  },
-  {
-    name: "CSS3",
-    value: 99,
-  },
-  {
-    name: "Tailwind Css",
-    value: 96,
-  },
-  {
-    name: "Git",
-    value: 96,
-  },
-  {
-    name: "Github",
-    value: 96,
-  },
-  {
-    name: "Redux",
-    value: 90,
+    category: "Version Control Tools",
+    skills: [
+      {
+        name: "Git",
+        value: 96,
+      },
+    ],
   },
 ];
 
@@ -103,41 +131,101 @@ const services = [
   {
     title: "Web Application Development",
     description:
-    "Custom-built web applications tailored to your business needs, ensuring seamless functionality and a great user experience"
+      "Custom-built web applications tailored to your business needs, ensuring seamless functionality and a great user experience",
   },
   {
     title: "Front-End Development: ",
     description:
-    "Creating visually appealing and responsive interfaces using modern technologies like HTML, CSS, JavaScript, React JS, Next JS and Redux."
+      "Creating visually appealing and responsive interfaces using modern technologies like HTML, CSS, JavaScript, React JS, Next JS and Redux.",
+  },
+  {
+    title: "Back-End Development",
+    description:
+      "Building robust and scalable server-side applications using Node.js and Java, with efficient database management using MongoDB and SQL.",
+  },
+  {
+    title: "App Development",
+    description:
+      "Developing cross-platform mobile applications using React Native, delivering a seamless user experience across iOS and Android devices.",
   },
 ];
 
 const dataportfolio = [
   {
-    img: blog,
+    title: "Food Zone",
+    img: burger,
+    description: "Food Ordering web application with admin panel. (Next Js)",
+    link: "https://food-zone-gamma.vercel.app",
+    tags: ["Next.js", "Admin Panel", "Web app"],
+  },
+  {
+    title: "Time Track",
+    img: timetrack,
     description:
-      "This is a Blog management website where user can post their blogs and read other user's blogs also they can interact by comments.(MERN stack)",
-    link: "https://github.com/Namrata-Chauhan8/BlogNest",
+      "Time and Activity Tracking Application for employees. (MERN Stack)",
+    link: "https://github.com/Niyati2601/time-track",
+    tags: ["MERN", "Web app", "Admin panel"],
   },
   {
-    img: reminder,
-    description: "Reminder Application for daily tasks.(MERN stack)",
-    link: "https://github.com/Namrata-Chauhan8/Reminder_App",
+    title: "Chat Box",
+    img: chatapp,
+    description:
+      "Chat Application with real-time messaging and user authentication. (React Js and Firebase)",
+    link: "https://chat-box-omega-navy.vercel.app/login",
+    tags: ["React", "Firebase", "Web app"],
   },
   {
-    img: "https://img.freepik.com/premium-vector/chat-app-logo-design-template-can-be-used-icon-chat-application-logo_605910-1724.jpg",
-    description: "Backend for ChatApplication (Node Js).",
-    link: "https://github.com/Namrata-Chauhan8/chatApp",
-  },
-  {
+    title: "Weather App",
     img: weather,
-    description: "Weather Application (React Js).",
+    description:
+      "Weather Forecasting Application that provides real-time weather updates and forecasts. (React Native CLI)",
     link: "https://weather-app-eta-seven-42.vercel.app/",
+    tags: ["React Native CLI", "Node.js", "Forecast", "Mobile app"],
+  },
+];
+
+const professionalProjects = [
+  {
+    title: "Learning Management System",
+    description:
+      "Developed responsive frontend for a time-bound learning management system with a focus on usability and performance.",
+    tags: ["React.js", "Web app", "Admin Panel"],
   },
   {
-    img: ecommerce,
-    description: "E-Commerce Application (React Js).",
-    link: "https://github.com/Namrata-Chauhan8/E-Commerce",
+    title: "Scholarship Platform",
+    description:
+      "Built and integrated frontend modules for student and admin panels, including API flows for application handling.",
+    tags: ["React.js", "Student Panel", "Admin Panel"],
+  },
+  {
+    title: "Service Marketplace",
+    description:
+      "Developed a service marketplace web application with customer and admin functionality.",
+    tags: ["React.js", "Admin Panel", "Customer Panel", "Web app"],
+  },
+  {
+    title: "Admin Dashboard",
+    description:
+      "Designed and implemented an admin dashboard for operations, monitoring, and user management.",
+    tags: ["React.js", "Admin Panel"],
+  },
+  {
+    title: "OCR Insurance System",
+    description:
+      "Implemented OCR-based PDF data extraction and visualization for an insurance data system.",
+    tags: ["Next JS", "Web app"],
+  },
+  {
+    title: "Employee Management System",
+    description:
+      "Contributed to the development of an internal employee management system used for day-to-day operations.",
+    tags: ["React.js", "RBAC Web app"],
+  },
+  {
+    title: "Responsive Web Apps",
+    description:
+      "Built multiple responsive web applications using HTML, CSS, JavaScript, and modern frontend practices.",
+    tags: ["HTML", "CSS", "JavaScript", "Web app"],
   },
 ];
 
@@ -153,20 +241,22 @@ const contactConfig = {
 
 const socialprofils = {
   github: "https://github.com/Namrata-Chauhan8",
-  email: "chauhannamrata856@gmail",
+  email: "mailto:chauhannamrata856@gmail.com",
   linkedin: "https://linkedin.com/in/namrata-chauhan-a3647a265",
   instagram: "https://instagram.com/chauhan__namrata8/",
-  skype:"live:.cid.2de9a15658d3df7e"
 };
 export {
   meta,
   dataabout,
   dataportfolio,
   worktimeline,
-  skills,
+  skillCategories,
   services,
   introdata,
   contactConfig,
   socialprofils,
   logotext,
+  avatar,
+  avatarDark,
+  professionalProjects,
 };

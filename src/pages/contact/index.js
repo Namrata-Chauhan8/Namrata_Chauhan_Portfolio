@@ -5,6 +5,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
+import { FaEnvelope, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
 
 export const ContactUs = () => {
   const [formData, setFormdata] = useState({
@@ -33,13 +34,13 @@ export const ContactUs = () => {
         contactConfig.YOUR_SERVICE_ID,
         contactConfig.YOUR_TEMPLATE_ID,
         templateParams,
-        contactConfig.YOUR_USER_ID
+        contactConfig.YOUR_USER_ID,
       )
       .then(
         (result) => {
           setFormdata({
             loading: false,
-            alertmessage: "SUCCESS! ,Thankyou for your messege",
+            alertmessage: "SUCCESS! , Thankyou for your messege",
             variant: "success",
             show: true,
           });
@@ -47,12 +48,12 @@ export const ContactUs = () => {
         (error) => {
           console.log(error.text);
           setFormdata({
-            alertmessage: `Faild to send!,${error.text}`,
+            alertmessage: `Faild to send! , ${error.text}`,
             variant: "danger",
             show: true,
           });
           document.getElementsByClassName("co_alert")[0].scrollIntoView();
-        }
+        },
       );
   };
 
@@ -92,23 +93,41 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
-            <address>
-              <strong>Email:</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                {contactConfig.YOUR_EMAIL}
-              </a>
-              <br />
-              <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Phone:</strong> {contactConfig.YOUR_FONE}
-                </p>
-              ) : (
-                ""
-              )}
-            </address>
-            <p>{contactConfig.description}</p>
+            <div className="contact__info_card">
+              <p className="contact__kicker">Get in touch</p>
+              <h3 className="contact__title">Let’s build something useful.</h3>
+              <p className="contact__desc">{contactConfig.description}</p>
+
+              <div className="contact__details">
+                <a
+                  className="contact__detail"
+                  href={`mailto:${contactConfig.YOUR_EMAIL}`}
+                >
+                  <span className="contact__detail_icon">
+                    <FaEnvelope />
+                  </span>
+                  <span>
+                    <small>Email</small>
+                    <strong>{contactConfig.YOUR_EMAIL}</strong>
+                  </span>
+                </a>
+
+                {contactConfig.hasOwnProperty("YOUR_FONE") ? (
+                  <a
+                    className="contact__detail"
+                    href={`tel:${contactConfig.YOUR_FONE}`}
+                  >
+                    <span className="contact__detail_icon">
+                      <FaPhoneAlt />
+                    </span>
+                    <span>
+                      <small>Phone</small>
+                      <strong>{contactConfig.YOUR_FONE}</strong>
+                    </span>
+                  </a>
+                ) : null}
+              </div>
+            </div>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <form onSubmit={handleSubmit} className="contact__form w-100">
@@ -152,6 +171,7 @@ export const ContactUs = () => {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn ac_btn" type="submit">
+                    <FaPaperPlane />
                     {formData.loading ? "Sending..." : "Send"}
                   </button>
                 </Col>
